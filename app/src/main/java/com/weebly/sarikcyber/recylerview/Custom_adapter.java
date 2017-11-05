@@ -55,6 +55,9 @@ public class Custom_adapter extends BaseAdapter {
 
 
 
+
+
+
         return v;
     }
 }
