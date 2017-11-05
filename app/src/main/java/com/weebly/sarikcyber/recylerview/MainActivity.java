@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 data.putExtra("date", userAddArrayList.get(position).getDateofrent());
                 data.putExtra("details", userAddArrayList.get(position).getDetails());
 
+
                 startActivity(data);
 
                 Toast.makeText(getApplicationContext(),"DataSent...",Toast.LENGTH_SHORT).show();
