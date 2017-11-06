@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_posting_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.weebly.sarikcyber.recylerview.PostingAdd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title:"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title:"
+            android:id="@+id/edtitle"
+            android:textColor="#222"
+            android:lines="2"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Division:"
+            android:textSize="20sp"
+
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="division:"
+            android:lines="1"
+            android:id="@+id/eddivision"
+            android:textColor="#222"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="location"
+            android:id="@+id/edlocation"
+            android:lines="2"
+            android:textColor="#222"
+            android:textSize="20sp"
+
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="For:"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Male"
+            android:lines="1"
+            android:id="@+id/edgender"
+            android:textColor="#222"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of rent:"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="date"
+            android:focusable="false"
+            android:clickable="true"
+            
+            android:id="@+id/eddate"
+            android:textColor="#222"
+            android:textSize="20sp"
+            android:lines="1"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="details"
+            android:id="@+id/eddetails"
+            android:textColor="#222"
+            android:textSize="20sp"
+
+            android:lines="7"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/submit"
+            android:background="#00aee5"
+            android:text="Submit"
+            android:textColor="#222"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+</ScrollView>

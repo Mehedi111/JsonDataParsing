@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<UserAdd> userAddArrayList;
     ListView lv;
     Custom_adapter adapter;
+    Button post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        post=(Button) findViewById(R.id.postadd);
         userAddArrayList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.listview);
 
@@ -51,13 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 data.putExtra("gender", userAddArrayList.get(position).getGender());
                 data.putExtra("date", userAddArrayList.get(position).getDateofrent());
                 data.putExtra("details", userAddArrayList.get(position).getDetails());
-
-
                 startActivity(data);
-
-                Toast.makeText(getApplicationContext(),"DataSent...",Toast.LENGTH_SHORT).show();
-
-
 
             }
         });
@@ -72,14 +68,10 @@ public class MainActivity extends AppCompatActivity {
         JsonArrayRequest jsonArrayRequest= new JsonArrayRequest(myURL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
-
-
-                for(int i=0;i<response.length();i++){
+           for(int i=0;i<response.length();i++){
                     try {
                         JSONObject jsonObject = (JSONObject)response.get(i);
                         UserAdd add = new UserAdd();
-
 
                          add.setId(jsonObject.getInt("id"));
                          add.setTitle(jsonObject.getString("title"));
@@ -106,9 +98,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         com.weebly.sarikcyber.recylerview.AppController.getInstance().addToRequestQueue(jsonArrayRequest);
+
         Toast.makeText(getApplicationContext(),"successfully",Toast.LENGTH_SHORT).show();
+  }
 
 
+    public void postingAdd(View view) {
+
+        Intent i = new Intent(MainActivity.this,PostingAdd.class);
+        startActivity(i);
     }
-
 }
