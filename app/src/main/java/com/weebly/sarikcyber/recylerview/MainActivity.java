@@ -1,12 +1,15 @@
 package com.weebly.sarikcyber.recylerview;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Custom_adapter adapter;
     Button post;
 
+    SearchView sv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,10 +42,27 @@ public class MainActivity extends AppCompatActivity {
         post=(Button) findViewById(R.id.postadd);
         userAddArrayList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.listview);
+        sv = (SearchView)  findViewById(R.id.search);
 
         adapter = new Custom_adapter(MainActivity.this, userAddArrayList);
         lv.setAdapter(adapter);
 
+        ///SEARCH_VIEW
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        ///ITEM CLICK
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -58,8 +80,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        fetchingdata();
+        if (isOnline()){
+            fetchingdata();
+        } else
+        {
+            Toast.makeText(this, "NO INTERNET CONNECTION", Toast.LENGTH_LONG).show();
+        }
+
+
+
     }
+
+
 
     private void fetchingdata() {
 
@@ -107,5 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(MainActivity.this,PostingAdd.class);
         startActivity(i);
+    }
+
+
+    public boolean isOnline(){
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+          if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting()){
+
+              return true;
+          }else {
+
+              return false;
+          }
+
     }
 }

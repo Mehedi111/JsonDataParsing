@@ -9,6 +9,15 @@ public class UserAdd {
     private int id;
     private String title, location, divisions, dateofrent, details, gender;
 
+
+    public UserAdd(){};
+
+    public UserAdd(String title, String location, String dateofrent) {
+        this.title = title;
+        this.location = location;
+        this.dateofrent = dateofrent;
+    }
+
     public int getId() {
         return id;
     }
