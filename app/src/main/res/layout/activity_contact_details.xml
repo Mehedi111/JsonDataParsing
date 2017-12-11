@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.weebly.sarikcyber.recylerview.ContactDetails">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:background="#353935"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            >
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="INFORMATION ABOUT YOU"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:textColor="@color/titlecolor"
+            />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textSize="20sp"
+            android:textColor="@color/titlecolor"
+            android:textStyle="bold"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Full Name"
+            android:id="@+id/edName"
+            android:textColor="#222"
+            android:lines="2"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number :"
+            android:textSize="20sp"
+            android:textColor="@color/titlecolor"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Phone Number"
+            android:id="@+id/edPhoneNoOne"
+            android:textColor="#222"
+            android:lines="2"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Another Phone Number (Optional) :"
+            android:textSize="20sp"
+            android:textColor="@color/titlecolor"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Another Phone Number"
+            android:id="@+id/edPhoneNoTwo"
+            android:textColor="#222"
+            android:lines="2"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+            />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email Address : "
+            android:textSize="20sp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/titlecolor"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Email Address"
+            android:id="@+id/edEmail"
+            android:textColor="#222"
+            android:lines="2"
+            android:textSize="15sp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="30dp"
+            android:text="SUBMIT"
+            android:background="#dcdcdc"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:textColor="#222"
+            android:onClick="submitButton"
+            android:id="@+id/btnSubmit"
+            android:layout_gravity="center"
+            />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
