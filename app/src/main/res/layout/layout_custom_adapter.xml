@@ -1,52 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
-    android:alpha="0.7"
-    android:layout_margin="10dp"
-    android:padding="10dp"
+    android:background="#c7bdbd"
+    android:alpha="0.8"
+    android:layout_margin="15dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+
     >
-
-
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:text="Title"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="#222"
         android:textStyle="bold"
         android:id="@+id/customtitle"
+      />
 
-
-        />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/customlocation"
-            android:layout_below="@+id/customtitle"
-            android:layout_alignLeft="@+id/customtitle"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:text="dhaka, dhanmondi, dhaka"
-            android:textColor="@color/colorPrimary"
-
-            />
-
-        <TextView
-            android:layout_width="match_parent"
+<ImageView
+    android:layout_marginTop="3dp"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:src="@drawable/clock"
+     android:id="@+id/dateicon"
+    android:layout_marginLeft="50dp"
+    android:layout_below="@+id/customtitle"
+    android:layout_alignLeft="@+id/customtitle"
+    />
+   <TextView
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="12-11-1999"
             android:textColor="#00a"
-            android:layout_below="@+id/customlocation"
-            android:layout_marginTop="5dp"
-            android:layout_alignLeft="@+id/customtitle"
-            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/dateicon"
+            android:layout_below="@+id/customtitle"
             android:id="@+id/customdate"
-            />
+            android:gravity="start"
+            android:layout_alignBottom="@+id/dateicon"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_alignTop="@+id/dateicon"
+         />
+
+    <ImageView
+        android:layout_marginTop="3dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/locationicon"
+        android:layout_below="@+id/dateicon"
+        android:layout_alignLeft="@+id/customtitle"
+        android:src="@drawable/location"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/customlocation"
+        android:layout_below="@+id/customdate"
+        android:layout_toRightOf="@+id/locationicon"
+        android:layout_alignTop="@+id/locationicon"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_alignBottom="@+id/locationicon"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:text="dhaka, dhanmondi, dhaka"
+        android:textColor="@color/colorPrimary"
+
+        />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/customtitle"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/customdate"
+        android:src="@drawable/details" />
+
     </RelativeLayout>
 

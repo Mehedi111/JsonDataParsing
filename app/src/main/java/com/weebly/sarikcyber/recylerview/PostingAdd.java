@@ -4,8 +4,10 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,20 +26,30 @@ import java.util.Map;
 
 public class PostingAdd extends AppCompatActivity {
 
-    EditText edtitle,edlocation,eddivision,edgender,eddate,eddetails;
+    EditText edtitle,edlocation,eddivision,edgender,eddate,eddetails,edrent;
     Button submit;
+    CheckBox checkBox;
+
+    Toolbar toolbar;
 
     DatePickerDialog datePickerdialog;
-
+    String ptitle= "";String plocation= "";String pdivision= "";String pgender= "";String pdate= "";String prent= "";String pdetails="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posting_add);
 
+        checkBox = (CheckBox)findViewById(R.id.ceckbox);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         edtitle=(EditText)findViewById(R.id.edtitle);
         edlocation=(EditText)findViewById(R.id.edlocation);
         eddivision=(EditText)findViewById(R.id.eddivision);
         edgender=(EditText)findViewById(R.id.edgender);
+        edgender=(EditText)findViewById(R.id.edgender);
+        edrent = (EditText) findViewById(R.id.edrent);
         eddate=(EditText)findViewById(R.id.eddate);
         eddetails=(EditText)findViewById(R.id.eddetails);
 
@@ -66,54 +78,75 @@ public class PostingAdd extends AppCompatActivity {
         });
 
         submit=(Button)findViewById(R.id.submit);
+
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                boolean error = false;
 
-                    String PostURL = "https://cybersarik.000webhostapp.com/tolet/postadd.php";
+                ptitle = edtitle.getText().toString().trim();
+                pdivision = eddivision.getText().toString().trim();
+                plocation = edlocation.getText().toString().trim();
+                pgender = edgender.getText().toString().trim();
+                pdate = eddate.getText().toString().trim();
+                pdetails = eddetails.getText().toString().trim();
 
+                if (ptitle.isEmpty() && pdivision.isEmpty() && plocation.isEmpty() && pgender.isEmpty() && pdate.isEmpty() && pdetails.isEmpty()){
 
-                    StringRequest sr = new StringRequest(Request.Method.POST, PostURL, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
+                    error = true;
 
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            VolleyLog.e("error", error.toString());
-                        }
-                    }) {
-                        protected Map<String, String> getParams() {
-                            Map<String, String> datasent = new HashMap<String, String>();
+                    edtitle.setError("Title is required !!");
+                    eddivision.setError("Division is required !!");
+                    edlocation.setError("Location is required !!");
+                    edgender.setError("Gender is required !!");
+                    eddate.setError("Date of Rent is required !!");
+                    eddetails.setError("Details is required !!");
 
-                            datasent.put("utitle", edtitle.getText().toString().trim());
-                            datasent.put("udivision", eddivision.getText().toString().trim());
-                            datasent.put("ulocation", edlocation.getText().toString().trim());
-                            datasent.put("ugender", edgender.getText().toString().trim());
-                            datasent.put("udate", eddate.getText().toString().trim());
-                            datasent.put("udetails", eddetails.getText().toString().trim());
+                }
 
-                            return datasent;
-                        }
-                    };
+                 String rentCon = edrent.getText().toString().trim();
 
-                AppController.getInstance().addToRequestQueue(sr);
-                Toast.makeText(PostingAdd.this, "Data Is Posted", Toast.LENGTH_SHORT).show();
-                clearFeild();
-                Intent i = new Intent(PostingAdd.this,MainActivity.class);
-                Toast.makeText(PostingAdd.this, "Redirect", Toast.LENGTH_SHORT).show();
-
-                startActivity(i);
-                finish();
+                if (rentCon.isEmpty() && checkBox.isChecked()) {
+                    prent = "Negotiable";
+                } else if (!rentCon.isEmpty() && !checkBox.isChecked()) {
+                    prent = rentCon;
+                } else {
+                    error = true;
+                    edrent.setError("Please Enter Rent Fee or Checked The box");
+                }
 
 
+                if (error) {
+
+                } else {
+                    clearFeild();
+                    sendDataToServer();
+                  }
             }
 
         });
 
     }
+
+    private void sendDataToServer() {
+
+
+        Intent i = new Intent(PostingAdd.this, ContactDetails.class);
+        i.putExtra("title",ptitle);
+        i.putExtra("division",pdivision);
+        i.putExtra("location",plocation);
+        i.putExtra("gender",pgender);
+        i.putExtra("date",pdate);
+        i.putExtra("details",pdetails);
+        i.putExtra("rent",prent);
+        startActivity(i);
+        finish();
+
+
+    }
+
 
     private void clearFeild() {
         edtitle.setText("");

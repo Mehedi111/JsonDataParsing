@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_posting_add"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -10,149 +10,224 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
         android:orientation="vertical"
+
         >
 
-        <TextView
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title:"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar
+                android:background="#353935"
+                android:elevation="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbar"
+                >
 
-        <EditText
-            android:layout_margin="10dp"
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Title:"
-            android:id="@+id/edtitle"
-            android:textColor="#222"
-            android:lines="2"
-            android:textSize="20sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20sp"
+            android:paddingRight="20sp"
 
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Division:"
-            android:textSize="20sp"
-
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="division:"
-            android:lines="1"
-            android:id="@+id/eddivision"
-            android:textColor="#222"
-            android:textSize="20sp"
-
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location:"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="location"
-            android:id="@+id/edlocation"
-            android:lines="2"
-            android:textColor="#222"
-            android:textSize="20sp"
+            android:paddingTop="15dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
 
 
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="For:"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
 
-        <EditText
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Male"
-            android:lines="1"
-            android:id="@+id/edgender"
-            android:textColor="#222"
-            android:textSize="20sp"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title :"
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
 
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Date of rent:"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Title of Your Advertisement (Keep it Short)"
+                android:id="@+id/edtitle"
+                android:textColor="#222"
+                android:lines="2"
+                android:textSize="15sp"
 
-            />
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Division :"
+                android:textSize="20sp"
 
-        <EditText
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="date"
-            android:focusable="false"
-            android:clickable="true"
-            
-            android:id="@+id/eddate"
-            android:textColor="#222"
-            android:textSize="20sp"
-            android:lines="1"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
 
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Details"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Division Name Only"
+                android:lines="1"
+                android:id="@+id/eddivision"
+                android:textColor="#222"
+                android:textSize="15sp"
 
-        <EditText
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="details"
-            android:id="@+id/eddetails"
-            android:textColor="#222"
-            android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address :"
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
 
-            android:lines="7"
-            />
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Full Address"
+                android:id="@+id/edlocation"
+                android:lines="2"
+                android:textColor="#222"
+                android:textSize="15sp"
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/submit"
-            android:background="#00aee5"
-            android:text="Submit"
-            android:textColor="#222"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:textStyle="bold"
-            />
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rent For :"
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Male of Female Only"
+                android:lines="1"
+                android:id="@+id/edgender"
+                android:textColor="#222"
+                android:textSize="15sp"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rent Fee : "
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rent Fee (Tk)"
+                android:lines="1"
+                android:inputType="number"
+                android:id="@+id/edrent"
+                android:textColor="#222"
+                android:textSize="15sp"
+
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Negotiable"
+                android:layout_marginLeft="10dp"
+
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:id="@+id/ceckbox"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of Rent :"
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+
+                />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Date for Rent"
+                android:focusable="false"
+                android:clickable="true"
+
+                android:id="@+id/eddate"
+                android:textColor="#222"
+                android:textSize="15sp"
+                android:lines="1"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details :"
+                android:textSize="20sp"
+                android:textColor="@color/titlecolor"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Write Attractive Description"
+                android:id="@+id/eddetails"
+                android:textColor="#222"
+                android:textSize="15sp"
+
+                android:lines="7"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/submit"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="30dp"
+                android:elevation="10dp"
+                android:text="Next"
+                android:layout_gravity="center"
+                android:textColor="#222"
+                android:background="#dcdcdc"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
-
-
 </ScrollView>

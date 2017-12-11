@@ -1,43 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#905"
-    android:padding="15dp"
+
+
     tools:context="com.weebly.sarikcyber.recylerview.MainActivity">
 
-    <Button
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="POST YOUR ADD"
-        android:id="@+id/postadd"
-        android:background="#00aee5"
-        android:onClick="postingAdd"
+
+        android:id="@+id/appbarlayout">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#353935"
+            android:id="@+id/toolbar"
+            style="@style/HeaderBar"
+            android:elevation="10dp"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POST YOUR ADD "
+                android:textStyle="bold"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:id="@+id/btnpostAdd"
+                android:textColor="#131313"
+                android:elevation="10dp"
+                android:background="#434943"
+
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:id="@+id/fab"
+
+        android:src="@drawable/fab"
+
+
 
 
         />
 
-    <SearchView
+    <RelativeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#545c54"
+        android:padding="10dp"
+
+        >
+
+
+
+        <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/search"
-        android:queryHint="SEARCH ROOM"
-        android:layout_below="@+id/postadd"
-        android:background="#00aee5"
-        android:layout_marginTop="10dp"
+            android:alpha="0.8"
+        android:queryHint="Search Room By Locations"
+            android:background="#878484"
+            android:elevation="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+
 
         >
 
     </SearchView>
 
+
     <ListView
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/search"
         android:id="@+id/listview"
+        android:stackFromBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"/>
 
-</RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

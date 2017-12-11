@@ -3,7 +3,8 @@
     package="com.weebly.sarikcyber.recylerview">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".AppController"
@@ -12,15 +13,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="To-Let BD">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DataDetailsActivity" />
-        <activity android:name=".PostingAdd"></activity>
+        <activity android:name=".DataDetailsActivity"
+            android:label="To-Let Details"
+            />
+        <activity android:name=".PostingAdd"
+            android:label="Post Add"
+            />
+        <activity android:name=".ContactDetails"
+            android:label="Contact Details"></activity>
     </application>
 
 </manifest>

@@ -58,12 +58,6 @@ public class Custom_adapter extends BaseAdapter implements Filterable {
         tvlocation.setText(arrayList.get(position).getLocation());
         tvdate.setText(arrayList.get(position).getDateofrent());
 
-
-
-
-
-
-
         return v;
     }
 
@@ -98,7 +92,7 @@ public class Custom_adapter extends BaseAdapter implements Filterable {
 
                     ///SEARCHING TITLE
 
-                    if ( filterList.get(i).getTitle().toUpperCase().contains(constraint) ){
+                    if ( filterList.get(i).getLocation().toUpperCase().contains(constraint) ){
 
                         UserAdd ua = new UserAdd(filterList.get(i).getTitle(),filterList.get(i).getLocation(),filterList.get(i).getDateofrent());
                         filtersarray.add(ua);

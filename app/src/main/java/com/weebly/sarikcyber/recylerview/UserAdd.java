@@ -7,8 +7,11 @@ package com.weebly.sarikcyber.recylerview;
 public class UserAdd {
 
     private int id;
-    private String title, location, divisions, dateofrent, details, gender;
-
+    private String title, location, divisions, dateofrent, details, gender, rent;
+    String name = "";
+    String phoneNoOne = "";
+    String phonenotwo = "";
+    String email = "";
 
     public UserAdd(){};
 
@@ -16,6 +19,46 @@ public class UserAdd {
         this.title = title;
         this.location = location;
         this.dateofrent = dateofrent;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhoneNoOne() {
+        return phoneNoOne;
+    }
+
+    public void setPhoneNoOne(String phoneNoOne) {
+        this.phoneNoOne = phoneNoOne;
+    }
+
+    public String getPhonenotwo() {
+        return phonenotwo;
+    }
+
+    public void setPhonenotwo(String phonenotwo) {
+        this.phonenotwo = phonenotwo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRent() {
+        return rent;
+    }
+
+    public void setRent(String rent) {
+        this.rent = rent;
     }
 
     public int getId() {
