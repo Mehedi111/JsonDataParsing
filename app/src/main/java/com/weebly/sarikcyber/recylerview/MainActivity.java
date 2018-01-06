@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent  = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         };
@@ -109,9 +110,11 @@ public class MainActivity extends AppCompatActivity {
         {
             progressDialog.dismiss();
             Snackbar snackbar = Snackbar
-                    .make(coordinatorLayout, "NO INTERNET CONNECTION", Snackbar.LENGTH_LONG)
+                    .make(coordinatorLayout, "NO INTERNET CONNECTION", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Try Again", onClickListener);
+
             snackbar.setActionTextColor(Color.RED);
+
             snackbar.show();
 
 
@@ -246,34 +249,7 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
-    /*
 
-    @Override
-
-    public boolean onCreateOptionsMenu(Menu menu){
-
-        getMenuInflater().inflate(R.menu.mymenu, menu);
-
-        return super.onCreateOptionsMenu(menu);
-
-    }
-
-    @Override
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-
-        if (id == R.id.postadd){
-           Intent i = new Intent(MainActivity.this, PostingAdd.class);
-            startActivity(i);
-
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-*/
 
 
     public boolean isOnline(){
